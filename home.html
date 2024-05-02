@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golrious Rose | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./cdn/logo.png" type="image/png" />
+    <link rel="stylesheet" href="./cdn/var.css" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        transition: 0.2s;
+        font-family: "Noto Sans Thai", sans-serif;
+      }
+
+      *.loop-font {
+        font-family: "Noto Sans Thai Looped", sans-serif;
+      }
+
+      html,
+      body {
+        width: 100vw;
+        overflow-x: hidden;
+        background: var(--bg-color);
+      }
+
+      ::-webkit-scrollbar {
+        width: 5px;
+        height: 8px;
+        background-color: #aaa;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--main-light);
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--main-dark);
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <style>
+        nav {
+          width: 100vw;
+          position: fixed;
+          height: fit-content;
+          background: white;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          z-index: 9;
+        }
+
+        nav .top {
+          padding: 16px 100px;
+          width: min(100%, 1240px);
+          display: inline-flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        nav .top .brand {
+          display: inline-flex;
+          align-items: center;
+          column-gap: 16px;
+        }
+
+        nav .top .brand img {
+          aspect-ratio: 1 / 1;
+          height: 48px;
+        }
+
+        nav .top .brand h3 {
+          font-size: 28px;
+          color: var(--main-dark);
+          font-weight: 400;
+        }
+
+        nav .top .menu {
+          display: inline-flex;
+          column-gap: 32px;
+        }
+
+        nav .top .menu li {
+          list-style: none;
+          font-size: 20px;
+          font-weight: 300;
+          cursor: pointer;
+        }
+
+        nav .top .menu li:hover {
+          color: var(--main-light);
+        }
+
+        nav .top .menu li.active,
+        nav .top .menu li.active:hover {
+          color: var(--main-dark);
+        }
+
+        nav .top .menu-toggle {
+          display: none;
+        }
+
+        nav .bottom {
+          display: none;
+        }
+
+        @media (max-width: 1024px) {
+          nav .top,
+          nav .bottom {
+            padding-inline: 50px;
+          }
+
+          nav .top .brand {
+            column-gap: 12px;
+          }
+
+          nav .top .brand h3 {
+            font-size: 20px;
+          }
+
+          nav .top .brand img {
+            height: 40px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          nav {
+            background: transparent;
+          }
+
+          nav .top {
+            background: white;
+          }
+
+          nav .top .menu {
+            display: none;
+          }
+
+          nav .top .brand h3 {
+            font-size: 24px;
+          }
+
+          nav .top .brand img {
+            display: none;
+          }
+
+          nav .top .menu-toggle {
+            display: flex;
+          }
+
+          nav .top .menu-toggle svg {
+            width: 28px;
+            height: 26px;
+          }
+
+          nav .bottom {
+            display: inline-flex;
+            flex-direction: column;
+            width: 100%;
+            background: #2e2e2e;
+            height: calc(100dvh - 68px);
+            padding-top: 16px;
+            opacity: 0;
+            visibility: hidden;
+            display: none;
+          }
+
+          nav .bottom.active {
+            opacity: 1;
+            visibility: visible;
+          }
+
+          nav .bottom li {
+            padding-block: 16px;
+            list-style: none;
+            text-align: left;
+            color: white;
+            font-weight: 500;
+            border-bottom: 0.5px solid #989898;
+            font-size: 20px;
+          }
+
+          nav .bottom li:hover {
+            background: #3d3d3d;
+          }
+        }
+
+        @media (max-width: 425px) {
+          nav .top,
+          nav .bottom {
+            padding-inline: 20px;
+          }
+        }
+      </style>
+      <div class="top">
+        <div class="brand">
+          <img src="./cdn/logo.png" alt="Logo" />
+          <h3>Glorious Rose</h3>
+        </div>
+        <ul class="menu">
+          <li class="active">หน้าแรก</li>
+          <li onclick="window.location.href = 'policies.html';">นโยบาย</li>
+          <li onclick="window.location.href = 'personal.html';">บุคลากร</li>
+          <li onclick="window.location.href = 'about.html';">เกี่ยวกับพรรค</li>
+        </ul>
+        <div class="menu-toggle">
+          <svg onclick="openNav()"
+            class="open"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 18 16"
+            fill="none"
+          >
+            <path
+              d="M1 1H17"
+              stroke="#2A353D"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M1 8H17"
+              stroke="#2A353D"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M1 15H17"
+              stroke="#2A353D"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="close" onclick="closeNav()" viewBox="0 0 48 49" fill="none" style="display: none;">
+            <path d="M3.0528 3.45703L45.4792 45.8834" stroke="#2A353D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3.0528 45.8838L45.4792 3.45738" stroke="#2A353D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+      </div>
+      <ul class="bottom">
+        <li class="active">หน้าแรก</li>
+        <li>นโยบาย</li>
+        <li>บุคลากร</li>
+        <li>เกี่ยวกับพรรค</li>
+      </ul>
+      <script type="text/javascript">
+        const nav_open_icon = document.querySelector(
+          "nav .top .menu-toggle svg.open"
+        );
+        const nav_close_icon = document.querySelector(
+          "nav .top .menu-toggle svg.close"
+        );
+
+        const nav_mobile_menu = document.querySelector("nav .bottom");
+
+        function openNav() {
+            nav_open_icon.style.display = "none";
+            nav_close_icon.style.display = "block";
+
+            nav_mobile_menu.style.display = "flex";
+
+            setTimeout(() => {
+                nav_mobile_menu.classList.add("active");
+            }, 10);
+        }
+
+        function closeNav() {
+            nav_open_icon.style.display = "block";
+            nav_close_icon.style.display = "none";
+
+            nav_mobile_menu.classList.remove("active");
+
+            setTimeout(() => {
+                nav_mobile_menu.style.display = "none";
+            }, 200);
+        }
+      </script>
+    </nav>
+    <main>
+      <style>
+        main {
+          width: 100vw;
+        }
+      </style>
+      <section class="hero">
+        <style>
+          section.hero {
+            background-image: url("./cdn/hero.png");
+            background-color: rgba(0, 0, 0, 0.2);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-blend-mode: multiply;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: min(100dvh, 800px);
+            padding: 20px 0;
+            width: min(2000px, 100vw);
+            margin-left: 50vw;
+            transform: translateX(-50%);
+          }
+
+          section.hero h1 {
+            color: var(--main-light);
+            font-size: 96px;
+            font-weight: 800;
+            text-align: center;
+            padding-inline: 100px;
+            line-height: 110%;
+          }
+
+          section.hero h3 {
+            font-size: 36px;
+            font-weight: 500;
+            color: white;
+            text-align: center;
+          }
+
+          @media (max-width: 1024px) {
+            section.hero h1 {
+              font-size: 72px;
+              padding-inline: 50px;
+            }
+
+            section.hero h3 {
+              font-size: 28px;
+            }
+          }
+
+          @media (max-width: 768px) {
+            section.hero h1 {
+              font-size: 60px;
+            }
+
+            section.hero h3 {
+              font-size: 20px;
+            }
+          }
+
+          @media (max-width: 425px) {
+            section.hero h1 {
+              padding-inline: 20px;
+            }
+
+            section.hero h3 {
+              padding-inline: 20px;
+            }
+
+            section.hero h3 br {
+              display: none;
+            }
+          }
+        </style>
+        <h1>We’re Glorious Rose</h1>
+        <h3>
+          We flying into the light of hope, <br />a Glorious Rose that belongs
+          to you
+        </h3>
+      </section>
+      <section class="policies">
+        <style>
+          section.policies {
+            margin-top: 48px;
+            width: 100vw;
+            padding-inline: 100px;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 32px;
+          }
+
+          section.policies h2 {
+            font-size: 60px;
+            font-weight: 600;
+            color: var(--main-light);
+            line-height: 100%;
+          }
+
+          section.policies p {
+            font-size: 24px;
+            color: black;
+            font-weight: 600;
+          }
+
+          section.policies input {
+            margin-top: 32px;
+            margin-bottom: 24px;
+            padding: 16px 24px;
+            font-size: 20px;
+            font-weight: 400;
+            border-radius: 16px;
+            border: 0.5px solid #989898;
+            background: white;
+            width: min(100%, 800px);
+          }
+
+          section.policies .category {
+            display: inline-flex;
+            column-gap: 16px;
+            width: min(100%, 1200px);
+            overflow-x: auto;
+            flex-direction: row;
+            padding-bottom: 4px;
+          }
+
+          section.policies .category::-webkit-scrollbar {
+            height: 3px;
+          }
+
+          section.policies .category button {
+            font-size: 16px;
+            font-weight: 400;
+            background: white;
+            display: inline-flex;
+            padding: 8px 24px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 16px;
+            border: 0.5px solid #989898;
+            cursor: pointer;
+            white-space: nowrap;
+          }
+
+          section.policies .category button:hover {
+            background: #ececec;
+          }
+
+          section.policies .category button.active,
+          section.policies .category button.active:hover {
+            border-color: var(--main-light);
+            background: var(--main-light);
+            color: white;
+          }
+
+          section.policies .list {
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: repeat(3, 31%);
+            gap: 80px 32px;
+            justify-content: center;
+            width: min(100%, 1200px);
+          }
+
+          section.policies .list .policy {
+            width: 100%;
+            cursor: pointer;
+          }
+
+          section.policies .list .policy img {
+            width: 100%;
+            border-radius: 16px;
+            aspect-ratio: 13 / 10;
+          }
+
+          section.policies .list .policy:hover img {
+            opacity: 0.8;
+          }
+
+          section.policies .list .policy .name {
+            font-size: 24px;
+            font-weight: 500;
+            margin-top: 14px;
+          }
+
+          section.policies .list .policy .type {
+            margin-top: 8px;
+            display: inline-flex;
+            column-gap: 8px;
+          }
+
+          section.policies .list .policy .type button {
+            font-size: 12px;
+            font-weight: 400;
+            background: white;
+            display: inline-flex;
+            padding: 8px 16px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            border: 0.5px solid #989898;
+            white-space: nowrap;
+            cursor: pointer;
+          }
+
+          section.policies .all {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--main-light);
+            padding: 16px 48px;
+            border-radius: 16px;
+            border: 1px solid var(--main-light);
+            background: transparent;
+            margin-top: 32px;
+            cursor: pointer;
+          }
+
+          section.policies .all:hover {
+            background: var(--main-light);
+            color: white;
+          }
+
+          @media (max-width: 1024px) {
+            section.policies {
+              padding-inline: 50px;
+            }
+
+            section.policies .category {
+              padding-bottom: 8px;
+            }
+
+            section.policies .list {
+              grid-template-columns: repeat(2, 48%);
+            }
+
+            section.policies .all {
+              font-size: 16px;
+              padding: 12px 32px;
+            }
+          }
+
+          @media (max-width: 768px) {
+            section.policies .category {
+              column-gap: 8px;
+            }
+
+            section.policies input {
+              font-size: 16px;
+            }
+          }
+
+          @media (max-width: 560px) {
+            section.policies .list {
+              grid-template-columns: 100%;
+              row-gap: 60px;
+            }
+          }
+
+          @media (max-width: 425px) {
+            section.policies {
+              padding-inline: 20px;
+            }
+          }
+        </style>
+        <h2>นโยบายที่โดดเด่น</h2>
+        <p>เรามี {$} นโยบาย ที่พร้อมจะเปลี่ยนแปลงโรงเรียนให้ดีขึ้น</p>
+        <input
+          type="text"
+          name="policy_name"
+          placeholder="ค้นหานโยบายที่คุณสนใจได้แล้วที่นี่"
+        />
+        <div class="category">
+          <button type="button" class="active">ทั้งหมด</button>
+          <button type="button">เทคโนโลยี</button>
+          <button type="button">วิชาการ</button>
+          <button type="button">สุขอนามัย</button>
+          <button type="button">กิจกรรม</button>
+          <button type="button">กรรมการสภานักเรียน</button>
+          <button type="button">กีฬา</button>
+          <button type="button">ระเบียบวินัย</button>
+          <button type="button">ทั่วไป</button>
+          <button type="button">อะไรก็ม่ายรู้</button>
+        </div>
+        <div class="list">
+          <div class="policy">
+            <img src="./cdn/policy1.png" alt="Policy Banner" />
+            <h5 class="name">Sport Tournament</h5>
+            <div class="type">
+              <button type="button">กีฬา</button>
+              <button type="button">กิจกรรม</button>
+            </div>
+          </div>
+          <div class="policy">
+            <img src="./cdn/policy1.png" alt="Policy Banner" />
+            <h5 class="name">Sport Tournament</h5>
+            <div class="type">
+              <button type="button">กีฬา</button>
+              <button type="button">กิจกรรม</button>
+            </div>
+          </div>
+          <div class="policy">
+            <img src="./cdn/policy1.png" alt="Policy Banner" />
+            <h5 class="name">Sport Tournament</h5>
+            <div class="type">
+              <button type="button">กีฬา</button>
+              <button type="button">กิจกรรม</button>
+            </div>
+          </div>
+          <div class="policy">
+            <img src="./cdn/policy1.png" alt="Policy Banner" />
+            <h5 class="name">Sport Tournament</h5>
+            <div class="type">
+              <button type="button">กีฬา</button>
+              <button type="button">กิจกรรม</button>
+            </div>
+          </div>
+          <div class="policy">
+            <img src="./cdn/policy1.png" alt="Policy Banner" />
+            <h5 class="name">Sport Tournament</h5>
+            <div class="type">
+              <button type="button">กีฬา</button>
+              <button type="button">กิจกรรม</button>
+            </div>
+          </div>
+          <div class="policy">
+            <img src="./cdn/policy1.png" alt="Policy Banner" />
+            <h5 class="name">Sport Tournament</h5>
+            <div class="type">
+              <button type="button">กีฬา</button>
+              <button type="button">กิจกรรม</button>
+            </div>
+          </div>
+          <div class="policy">
+            <img src="./cdn/policy1.png" alt="Policy Banner" />
+            <h5 class="name">Sport Tournament</h5>
+            <div class="type">
+              <button type="button">กีฬา</button>
+              <button type="button">กิจกรรม</button>
+            </div>
+          </div>
+          <div class="policy">
+            <img src="./cdn/policy1.png" alt="Policy Banner" />
+            <h5 class="name">Sport Tournament</h5>
+            <div class="type">
+              <button type="button">กีฬา</button>
+              <button type="button">กิจกรรม</button>
+            </div>
+          </div>
+          <div class="policy">
+            <img src="./cdn/policy1.png" alt="Policy Banner" />
+            <h5 class="name">Sport Tournament</h5>
+            <div class="type">
+              <button type="button">กีฬา</button>
+              <button type="button">กิจกรรม</button>
+            </div>
+          </div>
+          <div class="policy">
+            <img src="./cdn/policy1.png" alt="Policy Banner" />
+            <h5 class="name">Sport Tournament</h5>
+            <div class="type">
+              <button type="button">กีฬา</button>
+              <button type="button">กิจกรรม</button>
+            </div>
+          </div>
+          <div class="policy">
+            <img src="./cdn/policy1.png" alt="Policy Banner" />
+            <h5 class="name">Sport Tournament</h5>
+            <div class="type">
+              <button type="button">กีฬา</button>
+              <button type="button">กิจกรรม</button>
+            </div>
+          </div>
+          <div class="policy">
+            <img src="./cdn/policy1.png" alt="Policy Banner" />
+            <h5 class="name">
+              ใครโทรมาแล้โทรมาทำไมแล้วใครโทรมาแล้วโทรมาทำไมครับ
+            </h5>
+            <div class="type">
+              <button type="button">กีฬา</button>
+              <button type="button">กิจกรรม</button>
+            </div>
+          </div>
+          <div class="policy">
+            <img src="./cdn/policy1.png" alt="Policy Banner" />
+            <h5 class="name">Sport Tournament</h5>
+            <div class="type">
+              <button type="button">กีฬา</button>
+              <button type="button">กิจกรรม</button>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="all">ดูนโยบายทั้งหมด</button>
+      </section>
+    </main>
+    <footer>
+      <style>
+        footer {
+          width: 100vw;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: white;
+          padding-inline: 100px;
+        }
+
+        footer .top,
+        footer .bottom {
+          width: min(100%, 1040px);
+          display: inline-flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        footer .top {
+          padding-block: 16px;
+        }
+
+        footer .top h2 {
+          color: var(--main-light);
+          font-size: 40px;
+          font-weight: 500;
+        }
+
+        footer .top .social {
+          display: inline-flex;
+          column-gap: 32px;
+          align-items: center;
+        }
+
+        footer .top .social div {
+          border-radius: 16px;
+          border: 1px solid var(--main-light);
+          padding: 12px;
+          background: white;
+          box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.15);
+          display: grid;
+          justify-content: center;
+          cursor: pointer;
+        }
+
+        footer .top .social div:hover {
+          background: #fc71000f;
+        }
+
+        footer .bottom {
+          border-top: 0.5px solid black;
+          padding-block: 8px;
+        }
+
+        footer .bottom p {
+          color: #555;
+          font-size: 16px;
+          font-weight: 400;
+        }
+
+        footer .bottom p:last-child {
+          text-align: right;
+        }
+
+        footer .bottom a {
+          color: var(--main-light);
+          text-decoration: none;
+        }
+
+        footer .bottom a:hover {
+          color: var(--main-dark);
+        }
+
+        @media (max-width: 1024px) {
+          footer {
+            padding-inline: 50px;
+          }
+
+          footer .top h2 {
+            font-size: 28px;
+          }
+
+          footer .top .social {
+            column-gap: 20px;
+          }
+
+          footer .top .social div {
+            padding: 8px;
+            border-radius: 12px;
+          }
+
+          footer .top .social div svg {
+            height: 24px;
+            width: 24px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          footer .top h2 {
+            font-size: 20px;
+          }
+
+          footer .top .social {
+            column-gap: 16px;
+          }
+
+          footer .top .social div {
+            padding: 4px;
+            border-radius: 8px;
+          }
+
+          footer .top .social div svg {
+            height: 20px;
+            width: 20px;
+          }
+        }
+
+        @media (max-width: 425px) {
+          footer {
+            padding-inline: 20px;
+          }
+
+          footer .top,
+          footer .bottom {
+            flex-direction: column;
+            row-gap: 8px;
+          }
+
+          footer * {
+            text-align: center;
+          }
+        }
+      </style>
+      <div class="top">
+        <h2>Golorious Rose</h2>
+        <div class="social">
+          <div class="fb">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.24242 13.7778C6.93874 13.7778 6.66666 14.0337 6.66666 15.2593V17.4815C6.66666 18.7073 6.93874 18.963 8.24242 18.963H11.3939V27.8519C11.3939 29.0775 11.666 29.3334 12.9697 29.3334H16.1212C17.4249 29.3334 17.6969 29.0775 17.6969 27.8519V18.963H21.2356C22.2244 18.963 22.4792 18.7823 22.7508 17.8886L23.4261 15.6663C23.8913 14.1353 23.6047 13.7778 21.9109 13.7778H17.6969V10.0742C17.6969 9.25596 18.4024 8.59267 19.2727 8.59267H23.7576C25.0612 8.59267 25.3333 8.33687 25.3333 7.11119V4.14823C25.3333 2.92255 25.0612 2.66675 23.7576 2.66675H19.2727C14.9213 2.66675 11.3939 5.98316 11.3939 10.0742V13.7778H8.24242Z"
+                stroke="#FC7200"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="ig">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+            >
+              <path
+                d="M1.33334 13.9999C1.33334 8.0288 1.33334 5.04324 3.18833 3.18824C5.04333 1.33325 8.02889 1.33325 14 1.33325C19.9711 1.33325 22.9567 1.33325 24.8117 3.18824C26.6667 5.04324 26.6667 8.0288 26.6667 13.9999C26.6667 19.971 26.6667 22.9566 24.8117 24.8117C22.9567 26.6666 19.9711 26.6666 14 26.6666C8.02889 26.6666 5.04333 26.6666 3.18833 24.8117C1.33334 22.9566 1.33334 19.971 1.33334 13.9999Z"
+                stroke="#FC7200"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M20 14C20 17.3137 17.3137 20 14 20C10.6863 20 8 17.3137 8 14C8 10.6863 10.6863 8 14 8C17.3137 8 20 10.6863 20 14Z"
+                stroke="#FC7200"
+                stroke-width="1.5"
+              />
+              <path
+                d="M21.3438 6.6665H21.3318"
+                stroke="#FC7200"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="yt">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="26"
+              viewBox="0 0 30 26"
+              fill="none"
+            >
+              <path
+                d="M15 24.3334C17.413 24.3334 19.7268 24.095 21.8712 23.6579C24.5498 23.1119 25.8891 22.8389 27.1112 21.2675C28.3334 19.6962 28.3334 17.8925 28.3334 14.2847V11.7154C28.3334 8.10772 28.3334 6.30391 27.1112 4.73257C25.8891 3.16125 24.5498 2.88825 21.8712 2.34224C19.7268 1.90511 17.413 1.66675 15 1.66675C12.5871 1.66675 10.2732 1.90511 8.12877 2.34224C5.45023 2.88825 4.11097 3.16125 2.88882 4.73257C1.66669 6.30391 1.66669 8.10772 1.66669 11.7154V14.2847C1.66669 17.8925 1.66669 19.6962 2.88882 21.2675C4.11097 22.8389 5.45023 23.1119 8.12877 23.6579C10.2732 24.095 12.5871 24.3334 15 24.3334Z"
+                stroke="#FC7200"
+                stroke-width="1.5"
+              />
+              <path
+                d="M20.2828 13.4174C20.0849 14.2251 19.0321 14.8052 16.9265 15.9656C14.6363 17.2275 13.4912 17.8586 12.5637 17.6155C12.2496 17.5331 11.9603 17.3883 11.7173 17.1919C11 16.612 11 15.408 11 13.0002C11 10.5923 11 9.38832 11.7173 8.8084C11.9603 8.61197 12.2496 8.46721 12.5637 8.38488C13.4912 8.14177 14.6363 8.77276 16.9265 10.0347C19.0321 11.1951 20.0849 11.7752 20.2828 12.583C20.3501 12.8579 20.3501 13.1424 20.2828 13.4174Z"
+                stroke="#FC7200"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="tk">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+            >
+              <path
+                d="M26.1187 8.91475C24.7871 8.62992 23.5813 7.92722 22.6771 6.90909C21.7729 5.89096 21.2176 4.61063 21.092 3.25475V2.66675H16.4987V20.8961C16.4958 21.7031 16.2402 22.489 15.7677 23.1432C15.2952 23.7975 14.6295 24.2872 13.8643 24.5437C13.0991 24.8001 12.2728 24.8104 11.5014 24.573C10.7301 24.3356 10.0526 23.8624 9.56399 23.2201C9.06783 22.567 8.7926 21.7728 8.77821 20.9528C8.76382 20.1327 9.01101 19.3294 9.48394 18.6593C9.95688 17.9892 10.631 17.4871 11.4085 17.226C12.1859 16.9648 13.0264 16.9581 13.808 17.2067V12.5401C12.0651 12.2991 10.2905 12.609 8.73245 13.4263C7.17437 14.2436 5.91071 15.5275 5.11823 17.0983C4.32574 18.6692 4.04408 20.4485 4.31263 22.1873C4.58118 23.9261 5.38652 25.5375 6.61599 26.7961C7.78846 27.9958 9.29183 28.8188 10.9342 29.1602C12.5766 29.5017 14.2834 29.3459 15.8369 28.7129C17.3903 28.0799 18.7199 26.9984 19.6559 25.6063C20.5919 24.2143 21.0919 22.5749 21.092 20.8974V11.5827C22.9483 12.9099 25.1741 13.6215 27.456 13.6174V9.05341C27.0066 9.05397 26.5584 9.00749 26.1187 8.91475Z"
+                fill="#FC7200"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <p>&copy; 2024 Glorious Rose All right reserved.</p>
+        <p>
+          Design by
+          <a href="https://www.facebook.com/I3anklikov" target="_blank"
+            >Banklikov</a
+          >
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
