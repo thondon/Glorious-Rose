@@ -217,7 +217,8 @@
           <li onclick="window.location.href = 'about.html';">เกี่ยวกับพรรค</li>
         </ul>
         <div class="menu-toggle">
-          <svg onclick="openNav()"
+          <svg
+            onclick="openNav()"
             class="open"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 18 16"
@@ -245,17 +246,36 @@
               stroke-linejoin="round"
             />
           </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" class="close" onclick="closeNav()" viewBox="0 0 48 49" fill="none" style="display: none;">
-            <path d="M3.0528 3.45703L45.4792 45.8834" stroke="#2A353D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M3.0528 45.8838L45.4792 3.45738" stroke="#2A353D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="close"
+            onclick="closeNav()"
+            viewBox="0 0 48 49"
+            fill="none"
+            style="display: none"
+          >
+            <path
+              d="M3.0528 3.45703L45.4792 45.8834"
+              stroke="#2A353D"
+              stroke-width="5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M3.0528 45.8838L45.4792 3.45738"
+              stroke="#2A353D"
+              stroke-width="5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </div>
       </div>
       <ul class="bottom">
         <li class="active">หน้าแรก</li>
-        <li>นโยบาย</li>
-        <li>บุคลากร</li>
-        <li>เกี่ยวกับพรรค</li>
+        <li onclick="window.location.href = 'policies.html';">นโยบาย</li>
+        <li onclick="window.location.href = 'personal.html';">บุคลากร</li>
+        <li onclick="window.location.href = 'about.html';">เกี่ยวกับพรรค</li>
       </ul>
       <script type="text/javascript">
         const nav_open_icon = document.querySelector(
@@ -268,25 +288,25 @@
         const nav_mobile_menu = document.querySelector("nav .bottom");
 
         function openNav() {
-            nav_open_icon.style.display = "none";
-            nav_close_icon.style.display = "block";
+          nav_open_icon.style.display = "none";
+          nav_close_icon.style.display = "block";
 
-            nav_mobile_menu.style.display = "flex";
+          nav_mobile_menu.style.display = "flex";
 
-            setTimeout(() => {
-                nav_mobile_menu.classList.add("active");
-            }, 10);
+          setTimeout(() => {
+            nav_mobile_menu.classList.add("active");
+          }, 10);
         }
 
         function closeNav() {
-            nav_open_icon.style.display = "block";
-            nav_close_icon.style.display = "none";
+          nav_open_icon.style.display = "block";
+          nav_close_icon.style.display = "none";
 
-            nav_mobile_menu.classList.remove("active");
+          nav_mobile_menu.classList.remove("active");
 
-            setTimeout(() => {
-                nav_mobile_menu.style.display = "none";
-            }, 200);
+          setTimeout(() => {
+            nav_mobile_menu.style.display = "none";
+          }, 200);
         }
       </script>
     </nav>
